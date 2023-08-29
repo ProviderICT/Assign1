@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculator</title>
+  
+  <style>
+      body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.container {
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+input {
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 150px;
+  margin-bottom: 10px;
+}
+
+.buttons {
+  margin-top: 20px;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  margin: 5px;
+}
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Calculator</h1>
+    <label for="num1">Number 1:</label>
+    <input type="number" id="num1" required>
+    <label for="num2">Number 2:</label>
+    <input type="number" id="num2" required>
+    <div class="buttons">
+      <button id="addBtn">Add</button>
+      <button id="subtractBtn">Subtract</button>
+      <button id="multiplyBtn">Multiply</button>
+      <button id="divideBtn">Divide</button>
+    </div>
+  </div>
+  <script>
+      // Function to perform addition
+function performAddition(num1, num2) {
+  return num1 + num2;
+}
+
+// Function to perform subtraction
+function performSubtraction(num1, num2) {
+  return num1 - num2;
+}
+
+// Function to perform multiplication
+function performMultiplication(num1, num2) {
+  return num1 * num2;
+}
+
+// Function to perform division
+function performDivision(num1, num2) {
+  return num1 / num2;
+}
+
+// Function to handle button clicks
+function handleButtonClick(operation) {
+  const num1 = parseFloat(document.getElementById('num1').value);
+  const num2 = parseFloat(document.getElementById('num2').value);
+
+  if (isNaN(num1) || isNaN(num2)) {
+    alert('Please enter valid numbers.');
+    return;
+  }
+
+  let result;
+  switch (operation) {
+    case 'add':
+      result = performAddition(num1, num2);
+      break;
+    case 'subtract':
+      result = performSubtraction(num1, num2);
+      break;
+    case 'multiply':
+      result = performMultiplication(num1, num2);
+      break;
+    case 'divide':
+      if (num2 === 0) {
+        alert('Cannot divide by zero.');
+        return;
+      }
+      result = performDivision(num1, num2);
+      break;
+    default:
+      return;
+  }
+
+  alert(`Result: ${result}`);
+}
+
+// Add event listeners to the buttons
+document.getElementById('addBtn').addEventListener('click', () => handleButtonClick('add'));
+document.getElementById('subtractBtn').addEventListener('click', () => handleButtonClick('subtract'));
+document.getElementById('multiplyBtn').addEventListener('click', () => handleButtonClick('multiply'));
+document.getElementById('divideBtn').addEventListener('click', () => handleButtonClick('divide'));
+
+  </script>
+</body>
+</html>

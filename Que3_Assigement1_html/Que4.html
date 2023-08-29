@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculator</title>
+  <style>
+      body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.container {
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+input {
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 200px;
+  margin-bottom: 15px;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  margin: 5px;
+}
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Calculator</h1>
+    <input type="number" id="inputNumber" placeholder="Enter a number">
+    <button id="squareBtn">Square</button>
+    <button id="squareRootBtn">Square Root</button>
+    <button id="factorialBtn">Factorial</button>
+  </div>
+  <script >
+      // Function to calculate the square of a number
+function calculateSquare(number) {
+  return number * number;
+}
+
+// Function to calculate the square root of a number
+function calculateSquareRoot(number) {
+  return Math.sqrt(number);
+}
+
+// Function to calculate the factorial of a number
+function calculateFactorial(number) {
+  if (number === 0 || number === 1) {
+    return 1;
+  }
+  let result = 1;
+  for (let i = 2; i <= number; i++) {
+    result *= i;
+  }
+  return result;
+}
+
+// Event listener for the "Square" button
+document.getElementById('squareBtn').addEventListener('click', () => {
+  const inputNumber = parseFloat(document.getElementById('inputNumber').value);
+  if (!isNaN(inputNumber)) {
+    const result = calculateSquare(inputNumber);
+    alert(`Square of ${inputNumber} is ${result}`);
+  } else {
+    alert('Please enter a valid number.');
+  }
+});
+
+// Event listener for the "Square Root" button
+document.getElementById('squareRootBtn').addEventListener('click', () => {
+  const inputNumber = parseFloat(document.getElementById('inputNumber').value);
+  if (!isNaN(inputNumber) && inputNumber >= 0) {
+    const result = calculateSquareRoot(inputNumber);
+    alert(`Square root of ${inputNumber} is ${result}`);
+  } else {
+    alert('Please enter a valid non-negative number.');
+  }
+});
+
+// Event listener for the "Factorial" button
+document.getElementById('factorialBtn').addEventListener('click', () => {
+  const inputNumber = parseInt(document.getElementById('inputNumber').value);
+  if (!isNaN(inputNumber) && inputNumber >= 0) {
+    const result = calculateFactorial(inputNumber);
+    alert(`Factorial of ${inputNumber} is ${result}`);
+  } else {
+    alert('Please enter a valid non-negative integer.');
+  }
+});
+
+  </script>
+</body>
+</html>

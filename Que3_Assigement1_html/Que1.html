@@ -1,0 +1,60 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Random Number Generator</title>
+  
+   <style>
+      /* body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+} */
+
+.container {
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+} 
+
+  </style> 
+</head>
+<body>
+  <div class="container">
+    <h1>Random Number Generator</h1>
+    <button id="generateBtn">Generate Random Number</button>
+  </div>
+  <script>
+      // Function to generate a random number between min and max (inclusive)
+function getRandomNumber(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+// Function to display the random number in an alert message
+function displayRandomNumber() {
+  const randomNumber = getRandomNumber(1, 100);
+  alert(`Random Number: ${randomNumber}`);
+}
+
+// Add event listener to the button
+const generateBtn = document.getElementById('generateBtn');
+generateBtn.addEventListener('click', displayRandomNumber);
+
+  </script>
+</body>
+</html>

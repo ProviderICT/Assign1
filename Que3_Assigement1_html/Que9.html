@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Countdown Timer</title>
+  <style>
+      body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.container {
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+.countdown {
+  font-size: 48px;
+  font-weight: bold;
+  padding: 10px;
+  border: 2px solid #4CAF50;
+  border-radius: 5px;
+}
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Countdown Timer</h1>
+    <div class="countdown" id="countdownValue">10</div>
+  </div>
+  <script>
+      // Function to update the countdown value on the webpage
+function updateCountdownValue(value) {
+  document.getElementById('countdownValue').textContent = value;
+}
+
+// Function to start the countdown timer
+function startCountdown() {
+  let countdownValue = 10;
+
+  const countdownInterval = setInterval(() => {
+    countdownValue--;
+    updateCountdownValue(countdownValue);
+
+    if (countdownValue === 0) {
+      clearInterval(countdownInterval);
+      alert("Time's up!");
+    }
+  }, 1000);
+}
+
+// Start the countdown when the page is loaded
+window.onload = startCountdown;
+
+  </script>
+</body>
+</html>

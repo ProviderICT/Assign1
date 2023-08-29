@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Background Color Changer</title>
+  
+  <style>
+      body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #f0f0f0;
+}
+
+.container {
+  text-align: center;
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+select {
+  padding: 8px;
+  font-size: 16px;
+}
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Background Color Changer</h1>
+    <label for="colorSelect">Select a color:</label>
+    <select id="colorSelect">
+      <option value="red">Red</option>
+      <option value="green">Green</option>
+      <option value="blue">Blue</option>
+      <option value="black">black</option>
+
+    </select>
+  </div>
+  <script>
+      // Function to change the background color based on the selected option
+function changeBackgroundColor() {
+  const colorSelect = document.getElementById('colorSelect');
+  const selectedColor = colorSelect.value;
+
+  document.body.style.backgroundColor = selectedColor;
+}
+
+// Add event listener to the dropdown menu
+const colorSelect = document.getElementById('colorSelect');
+colorSelect.addEventListener('change', changeBackgroundColor);
+
+// Initialize background color based on the default selected option
+changeBackgroundColor();
+
+  </script>
+</body>
+</html>

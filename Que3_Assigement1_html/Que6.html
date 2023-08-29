@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stopwatch</title>
+  
+  <style>
+      body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.container {
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+.timer {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  margin: 5px;
+}
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Stopwatch</h1>
+    <div class="timer">00:00:00</div>
+    <button id="startBtn">Start</button>
+    <button id="stopBtn">Stop</button>
+    <button id="resetBtn">Reset</button>
+  </div>
+  <script>
+      let intervalId;
+let seconds = 0;
+let minutes = 0;
+let hours = 0;
+
+// Function to update the timer display
+function updateTimerDisplay() {
+  const timerDisplay = document.querySelector('.timer');
+  const formattedTime = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+  timerDisplay.textContent = formattedTime;
+}
+
+// Function to start the timer
+function startTimer() {
+  intervalId = setInterval(() => {
+    seconds++;
+    if (seconds === 60) {
+      seconds = 0;
+      minutes++;
+      if (minutes === 60) {
+        minutes = 0;
+        hours++;
+      }
+    }
+    updateTimerDisplay();
+  }, 1000);
+}
+
+// Function to stop the timer
+function stopTimer() {
+  clearInterval(intervalId);
+}
+
+// Function to reset the timer
+function resetTimer() {
+  seconds = 0;
+  minutes = 0;
+  hours = 0;
+  updateTimerDisplay();
+}
+
+// Event listeners for the buttons
+document.getElementById('startBtn').addEventListener('click', startTimer);
+document.getElementById('stopBtn').addEventListener('click', stopTimer);
+document.getElementById('resetBtn').addEventListener('click', resetTimer);
+
+// Initialize the timer display
+updateTimerDisplay();
+
+  </script>
+</body>
+</html>
