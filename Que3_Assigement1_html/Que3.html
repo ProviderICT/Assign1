@@ -13,7 +13,6 @@
   align-items: center;
   height: 100vh;
   margin: 0;
-  background-color: yellowgreen;
 }
 
 .container {
@@ -26,8 +25,10 @@ h1 {
 
 .slideshow {
   position: relative;
-  width: 500px;
+  width: 900px;
   height: 300px;
+  display: flex;
+  justify-content: center;
   overflow: hidden;
 }
 
@@ -51,7 +52,7 @@ button {
   padding: 10px 20px;
   font-size: 16px;
   cursor: pointer;
-  background-color: #4CAF50;
+  background-color: forestgreen;
   color: white;
   border: none;
   border-radius: 5px;
@@ -63,10 +64,10 @@ button {
 <body>
   <div class="container">
     <h1>Image Slideshow</h1>
-    <div class="slideshow">
-      <img src="IMAGE/1.jpg" alt="Image 1">
-      <img src="IMAGE/a.png" alt="Image 2">
-      <img src="IMAGE/d1.png" alt="Image 3">
+    <div class="slideshow" >
+      <img src="IMAGE/img1.jpg" alt="Image 1">
+      <img src="IMAGE/img2.jpg" alt="Image 2">
+      <img src="IMAGE/img3.jpg" alt="Image 3">
     </div>
     <div class="buttons">
       <button id="prevBtn">Previous</button>
@@ -80,7 +81,6 @@ button {
     const nextBtn = document.getElementById('nextBtn');
 let currentIndex = 0;
 
-// Function to show the current image
 function showImage(index) {
   images.forEach((image, i) => {
     if (i === index) {
@@ -91,7 +91,6 @@ function showImage(index) {
   });
 }
 
-// Event listeners for the buttons
 prevBtn.addEventListener('click', () => {
   currentIndex = (currentIndex - 1 + images.length) % images.length;
   showImage(currentIndex);
@@ -102,7 +101,6 @@ nextBtn.addEventListener('click', () => {
   showImage(currentIndex);
 });
 
-// Show the first image initially
 showImage(currentIndex);
 
   </script>

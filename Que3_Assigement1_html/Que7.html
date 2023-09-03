@@ -73,9 +73,9 @@ h1 {
   <div class="container">
     <h1>Image Gallery</h1>
     <div class="gallery">
-      <img src="IMAGE/1.jpg" alt="Image 1" onclick="openModal('IMAGE/1.jpg')">
-      <img src="IMAGE/a.png" alt="Image 2" onclick="openModal('IMAGE/a.png')">
-      <img src="IMAGE/d1.png" alt="Image 3" onclick="openModal('IMAGE/d1.png')">
+      <img src="IMAGE/img1.jpg" alt="Image 1" onclick="openModal('IMAGE/img1.jpg')">
+      <img src="IMAGE/img2.jpg" alt="Image 2" onclick="openModal('IMAGE/img2.jpg')">
+      <img src="IMAGE/img3.jpg" alt="Image 3" onclick="openModal('IMAGE/img3.jpg')">
     </div>
     <div id="myModal" class="modal">
       <span class="close" onclick="closeModal()">&times;</span>
@@ -92,13 +92,11 @@ function openModal(imageSrc) {
   modalImage.src = imageSrc;
 }
 
-// Function to close the modal
 function closeModal() {
   const modal = document.getElementById('myModal');
   modal.style.display = 'none';
 }
 
-// Add event listener to the close button inside the modal
 document.querySelector('.close').addEventListener('click', closeModal);
 
   </script>

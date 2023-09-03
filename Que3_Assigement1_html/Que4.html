@@ -14,10 +14,6 @@
   margin: 0;
 }
 
-.container {
-  text-align: center;
-}
-
 h1 {
   margin-bottom: 20px;
 }
@@ -35,7 +31,7 @@ button {
   padding: 10px 20px;
   font-size: 16px;
   cursor: pointer;
-  background-color: #4CAF50;
+  background-color: forestgreen;
   color: white;
   border: none;
   border-radius: 5px;
@@ -48,22 +44,22 @@ button {
   <div class="container">
     <h1>Calculator</h1>
     <input type="number" id="inputNumber" placeholder="Enter a number">
+    <div class="btn">
     <button id="squareBtn">Square</button>
     <button id="squareRootBtn">Square Root</button>
     <button id="factorialBtn">Factorial</button>
   </div>
+</div>
   <script >
-      // Function to calculate the square of a number
+
 function calculateSquare(number) {
   return number * number;
 }
 
-// Function to calculate the square root of a number
 function calculateSquareRoot(number) {
   return Math.sqrt(number);
 }
 
-// Function to calculate the factorial of a number
 function calculateFactorial(number) {
   if (number === 0 || number === 1) {
     return 1;
@@ -75,7 +71,6 @@ function calculateFactorial(number) {
   return result;
 }
 
-// Event listener for the "Square" button
 document.getElementById('squareBtn').addEventListener('click', () => {
   const inputNumber = parseFloat(document.getElementById('inputNumber').value);
   if (!isNaN(inputNumber)) {
@@ -86,7 +81,6 @@ document.getElementById('squareBtn').addEventListener('click', () => {
   }
 });
 
-// Event listener for the "Square Root" button
 document.getElementById('squareRootBtn').addEventListener('click', () => {
   const inputNumber = parseFloat(document.getElementById('inputNumber').value);
   if (!isNaN(inputNumber) && inputNumber >= 0) {
@@ -97,7 +91,7 @@ document.getElementById('squareRootBtn').addEventListener('click', () => {
   }
 });
 
-// Event listener for the "Factorial" button
+
 document.getElementById('factorialBtn').addEventListener('click', () => {
   const inputNumber = parseInt(document.getElementById('inputNumber').value);
   if (!isNaN(inputNumber) && inputNumber >= 0) {

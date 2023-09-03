@@ -24,7 +24,7 @@ saveHighScore = (e) => {
         // score: Math.floor(Math.random() * 100),
         name: username.value,
     };
-    highScores.push(score);
+    // highScores.push(score);
 
     //sorting the highscore array of top 5
     highScores.sort((a, b) => b.score - a.score)

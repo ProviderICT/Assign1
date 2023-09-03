@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Background Color Changer</title>
+  <title>Background Color</title>
   
   <style>
       body {
@@ -42,31 +42,24 @@ select {
 </head>
 <body>
   <div class="container">
-    <h1>Background Color Changer</h1>
+    <h1>Change Background Color</h1>
     <label for="colorSelect">Select a color:</label>
-    <select id="colorSelect">
+    <select id="colorSelect" onclick="changeBackgroundColor()">
+      <option disabled selected>Select background color</option>
       <option value="red">Red</option>
       <option value="green">Green</option>
       <option value="blue">Blue</option>
-      <option value="black">black</option>
+      <!-- <option value="black">black</option> -->
 
     </select>
   </div>
   <script>
-      // Function to change the background color based on the selected option
 function changeBackgroundColor() {
   const colorSelect = document.getElementById('colorSelect');
   const selectedColor = colorSelect.value;
 
   document.body.style.backgroundColor = selectedColor;
 }
-
-// Add event listener to the dropdown menu
-const colorSelect = document.getElementById('colorSelect');
-colorSelect.addEventListener('change', changeBackgroundColor);
-
-// Initialize background color based on the default selected option
-changeBackgroundColor();
 
   </script>
 </body>

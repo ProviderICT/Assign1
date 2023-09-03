@@ -45,7 +45,7 @@ button {
   padding: 10px 20px;
   font-size: 16px;
   cursor: pointer;
-  background-color: #4CAF50;
+  background-color: forestgreen;
   color: white;
   border: none;
   border-radius: 5px;
@@ -61,7 +61,7 @@ button {
       <input type="text" id="username" name="username" required>
       <label for="password">Password:</label>
       <input type="password" id="password" name="password" required>
-      <button type="button" id="loginBtn">Login</button>
+      <button type="button" id="loginBtn" onclick="checkLogin()">Login</button>
     </form>
   </div>
   <script >
@@ -76,10 +76,6 @@ function checkLogin() {
     alert('Login Failed');
   }
 }
-
-// Add event listener to the login button
-const loginBtn = document.getElementById('loginBtn');
-loginBtn.addEventListener('click', checkLogin);
 
   </script>
 </body>
