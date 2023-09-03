@@ -3,9 +3,9 @@ const saveScoreBtn = document.getElementById('saveScoreBtn');
 const finalScore = document.getElementById('finalScore');
 const mostRecentScore = localStorage.getItem('mostRecentScore');
 
-const highScores = JSON.parse(localStorage.getItem('highScores'));
+// const highScores = JSON.parse(localStorage.getItem('highScores'));
 const MAx_High_Score = 5;
-console.log(highScores);
+// console.log(highScores);
 
 finalScore.innerText = mostRecentScore;
 
@@ -27,11 +27,11 @@ saveHighScore = (e) => {
     // highScores.push(score);
 
     //sorting the highscore array of top 5
-    highScores.sort((a, b) => b.score - a.score)
-    highScores.splice(5);//it deduct the score which is less
+    // highScores.sort((a, b) => b.score - a.score)
+    // highScores.splice(5);//it deduct the score which is less
 
     //permanently store the score to localstorage
-    localStorage.setItem("highScores", JSON.stringify(highScores));
+    // localStorage.setItem("highScores", JSON.stringify(highScores));
     window.location.assign("./quiz.html");
     // console.log(highScores);
 }
