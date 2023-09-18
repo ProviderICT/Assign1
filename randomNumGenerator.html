@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Number Generator</title>
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+ 
+</head>
+<body style="text-align:center">
+    <div class="container m-5" style="display: flex; justify-content: center;align-items: center;" >
+        <button class="btn btn-outline-success" onclick="randomInteger()">Generate Random Number</button>
+    </div>
+
+    <div class="container">
+        <select onchange="color(this.value)">
+            <option value="">color</option>
+            <option value="red">red</option>
+            <option value="green">Green</option>
+            <option value="blue">blue</option>
+            <option value="white">white</option>
+        </select>
+    </div>
+
+       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    <script>
+
+        function randomInteger(min,max) {
+            let random = Math.random()*100;
+           return alert( random , 'success');
+        }
+        function color(value) {
+            document.body.style.background = value;
+        }
+
+   </script>
+</body>
+</html>

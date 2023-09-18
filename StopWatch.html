@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stopwatch</title>
+  </head>
+  <style>
+    .container {
+      width: 600px;
+      margin: 10% auto;
+      padding: 5% 0;
+      text-align: center;
+    }
+    #stopwatch {
+      font-size: 4rem;
+    }
+    .btn {
+      width: 5rem;
+    }
+  </style>
+  <body>
+    <div class="container">
+      <h1>StopWatch</h1>
+      <div id="stopwatch">00:00:00</div>
+      <button class="btn" onclick="start(true)" id="start">Start</button>
+      <button class="btn" onclick="stop()" id="stop">Stop</button>
+      <button class="btn" onclick="reset()" id="reset">Reset</button>
+    </div>
+    <script>
+      let stopwatch = document.getElementById("stopwatch");
+      let startbtn = document.getElementById("start");
+      let timer = null;
+      let ms = 0;
+      let sec = 0;
+      let min = 0;
+
+      start = (flag) => {
+        if (flag) {
+          start.disable = true;
+        }
+        timer = setTimeout(() => {
+          ms = parseInt(ms);
+          sec = parseInt(sec);
+          min = parseInt(min);
+          ms++;
+
+          if (ms == 100) {
+            sec = sec + 1;
+            ms = 0;
+          }
+          if (sec == 60) {
+            min = min + 1;
+            sec = 0;
+          }
+          if (ms == 100) {
+            sec = sec + 1;
+            ms = 0;
+          }
+          if (ms < 10) {
+            ms = "0" + ms;
+          }
+          if (sec < 10) {
+            sec = "0" + sec;
+          }
+          if (min < 10) {
+            min = "0" + min;
+          }
+          stopwatch.innerHTML = min + ":" + sec + ":" + ms;
+          start();
+        }, 10);
+      };
+
+      stop = () => {
+        clearTimeout(timer);
+        startbtn.disable = false;
+      };
+
+      reset = () => {
+        ms = 0;
+        sec = 0;
+        min = 0;
+        clearTimeout(timer);
+        startbtn.disable = false;
+        stopwatch.innerHTML = "00:00:00";
+      };
+    </script>
+  </body>
+</html>

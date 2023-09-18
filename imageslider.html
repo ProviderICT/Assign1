@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Images Slider</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            background: azure;
+        }
+        .btns{
+            margin-top: 1rem;
+        }
+        .btns button{
+            background-color: floralwhite;
+            padding:    15px 45px;
+            font-size: medium;
+            color: black;
+        }
+        #gallery{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            height: 400px;
+            width: 600px;
+        }
+
+        #current-img{
+            max-width: 600px;
+            position: absolute;
+            transition: all 0.5s ease-in-out;
+            opacity: 1;
+        }
+
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="gallery">
+            <img src="./img/img1.jpg" alt="Nature" id="current-img">
+        </div>
+        <div class="btns">
+            <button id="prev"><</button>
+            <button id="next">></button>
+        </div>
+    </div>
+</body>
+</html>

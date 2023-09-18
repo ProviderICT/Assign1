@@ -1,0 +1,112 @@
+:root{
+    background:honeydew ;
+    font-size: 62.5%;
+}
+
+*{
+    box-sizing: border-box;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin: 0;
+    padding: 0;
+    color: darkslateblue;
+}
+h1{
+    font-size: 5.4rem;
+    color: #56a5eb;
+    margin-bottom: 5rem;
+}
+
+.container
+{
+    width: 100vw;
+    height: 100vh;
+   display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btns{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn{
+    width: 70%;
+    /* height: 20%; */
+    font-size: medium;
+}
+.btn:hover{
+ cursor: pointer;
+}
+
+/* GAme html */
+.choice-container{
+    display: flex;
+    margin-bottom: 0.5rem;
+    width: 100%;
+    font-size: 1.8rem;
+    border: 0.1rem solid rgb(86, 162, 235,0.25);
+    background-color: white;
+}
+.choice-container:hover{
+    cursor: pointer;
+}
+
+.choice-prefix{
+    padding: 1rem 2rem;
+    background: #56a5eb;
+    color: white;
+}
+
+.choice-text{
+    margin: 10px;
+    padding: 2px;
+    width: 100%;
+
+}
+
+.correct{
+    background-color: rgb(63, 207, 63);
+}
+
+.incorrect{
+    background-color: rgb(172, 44, 44);
+}
+
+#hud{
+    margin: 3rem;
+    display: flex;
+    justify-content: space-between;
+}
+h2{
+    color: #56a5eb;
+
+}
+.hud-main-txt{
+    text-align: center;
+}
+
+.hud-prefix{
+    text-align: center;
+    font-size: 2rem;
+}
+#progressBar{
+    width: 20rem;
+    height: 3rem;
+    border: 0.3rem solid #56a5eb;
+}
+
+#progressBarfull{
+    height: 2.5rem;
+    background-color: #56a5eb;
+    width: 0%;
+}
+/* 
+#loader{
+    border: 1.6rem solid white;
+    border-radius: 50%;
+    border-top: 1.6rem solid #56a5eb;
+    width: 12rem;
+    height: 12rem;
+} */

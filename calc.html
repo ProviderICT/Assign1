@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calc</title>
+</head>
+<body>
+    <div class="container">
+        <input type="text" id="txt1">
+        <input type="text" id="txt2">
+
+        <div class="btns">
+            <button class="button" onclick="add()" value="Addition">+</button>
+            <button class="button" onclick="sub()" value="Subtraction">-</button>
+            <button class="button" onclick="multpl()" value="Multiply">*</button>
+            <button class="button" onclick="div()" value="Division">/</button>
+        </div>
+    </div>
+
+    <script>
+        let num1 = document.getElementById('txt1').value;
+        let num2 = document.getElementById('txt2').value;
+
+        add=()=>{
+          //let sum =  num1 + num2;
+         alert(num1 + num2);
+        }
+    </script>
+</body>
+</html>
